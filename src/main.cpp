@@ -12,6 +12,7 @@ int main(int argc, char **argv)
     }
     else
     {
+        
         ::testing::InitGoogleTest(&argc, argv);
         std::cout << "RUNNING TESTS ..." << std::endl;
         int ret{RUN_ALL_TESTS()};

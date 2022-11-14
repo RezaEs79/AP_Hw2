@@ -24,7 +24,7 @@ RUN cmake .. \
     && make install
 
 # build the project
-WORKDIR /usr/src/app
+WORKDIR /usr/src/appssh 
 COPY . .
 RUN rm -rf build
 RUN mkdir build
