@@ -5,9 +5,15 @@
 
 int main(int argc, char **argv)
 {
-    if (false) // make false to run unit-tests
+    // if (true) // make false to run unit-tests
+    if (false) 
     {
         // debug section
+        // class Trie *root = Trie();
+   
+        // Trie();
+        // root.insert("THE");
+        // Trie::root.insert("THERE");
 
     }
     else

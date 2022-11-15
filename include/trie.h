@@ -1,21 +1,19 @@
+#include <string>
 #include <vector>
-#include<string>
 
 #ifndef TRIE_H
 #define TRIE_H
 
-class Trie
-{
-  public:
+class Trie {
+public:
     Trie();
     ~Trie();
     void insert(std::string str);
     bool search(std::string query);
     // void bfs(std::function<void(Node*& node)> func);
-    
-    class Node
-    {
-      public:
+
+    class Node {
+    public:
         Node(char data, bool is_finished);
         Node();
         std::vector<Node*> children;
@@ -24,7 +22,8 @@ class Trie
     };
 
     Node* root;
-  private:
+
+private:
 };
 
 // class Cube

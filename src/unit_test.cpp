@@ -69,21 +69,21 @@
 //     EXPECT_EQ(trie.root->children[0]->children[0]->children[1]->children[0]->is_finished, true);
 // }
 
-// TEST(HW2Test, TEST7) {
-//     Trie trie{};
-//     trie.insert("there");
-//     trie.insert("does");
-//     trie.insert("that");
-//     trie.insert("this");
-//     trie.insert("did");
+TEST(HW2Test, TEST7) {
+    Trie trie{};
+    trie.insert("there");
+    trie.insert("does");
+    trie.insert("that");
+    trie.insert("this");
+    trie.insert("did");
 
-//     EXPECT_EQ(trie.root->children.size(), 2);
-//     EXPECT_EQ(trie.root->children[0]->children[0]->children.size(), 3);
-//     EXPECT_EQ(trie.root->children[1]->children.size(), 2);
-//     EXPECT_EQ(trie.root->children[1]->children[1]->data, 'i');
-//     EXPECT_EQ(trie.root->children[1]->children[1]->is_finished, false);
-//     EXPECT_EQ(trie.root->children[0]->children[0]->children[2]->data, 'i');
-// }
+    EXPECT_EQ(trie.root->children.size(), 2);
+    EXPECT_EQ(trie.root->children[0]->children[0]->children.size(), 3);
+    EXPECT_EQ(trie.root->children[1]->children.size(), 2);
+    EXPECT_EQ(trie.root->children[1]->children[1]->data, 'i');
+    EXPECT_EQ(trie.root->children[1]->children[1]->is_finished, false);
+    EXPECT_EQ(trie.root->children[0]->children[0]->children[2]->data, 'i');
+}
 
 // TEST(HW2Test, TEST8) {
 //     Trie trie;
