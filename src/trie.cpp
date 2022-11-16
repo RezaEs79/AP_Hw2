@@ -16,6 +16,15 @@ Trie::Trie()
     root = new Node('\0', false);
 }
 
+Trie::~Trie()
+{
+    if(root == nullptr) return;
+    std::vector<Node*> nodes;
+    this->bfs([&nodes](Trie::Node*& node){nodes.push_back(node);});
+    for(const auto& node : nodes)
+        delete node;
+}
+
 void Trie::insert(std::string str)
 {
     Node* curr = root;
@@ -81,17 +90,6 @@ void Trie::bfs(std::function<void(Trie::Node*& node)> func)
     }
 }
 
-
-Trie::~Trie()
-{
-    if(root == nullptr) return;
-    std::vector<Node*> nodes;
-    this->bfs([&nodes](Trie::Node*& node){nodes.push_back(node);});
-    for(const auto& node : nodes)
-        delete node;
-}
-
-
 void add_children(Trie::Node* new_node, Trie::Node* old_node)
 {
     for(Trie::Node* old_node_child : old_node->children){
@@ -107,11 +105,23 @@ Trie::Trie(const Trie& trie)
     add_children(root, trie.root);
 }
 
+Trie::Trie(Trie&& trie)
+    {
+        root = trie.root;
+        trie.root = nullptr;
+    }
+
+
 void Trie::operator=(const Trie& trie){
     root = new Node(trie.root->data, trie.root->is_finished);
     add_children(root, trie.root);
-
 }
+
+void Trie::operator=(Trie&& trie)
+    {
+        root = trie.root;
+        trie.root = nullptr;
+    }
 
 Trie::Trie(std::initializer_list<std::string> challenge):Trie()
 {
