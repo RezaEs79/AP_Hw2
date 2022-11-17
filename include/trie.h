@@ -1,7 +1,6 @@
 #include <functional>
 #include <initializer_list> // for std::initializer_list
 #include <iostream>
-#include <list>
 #include <queue>
 #include <string>
 #include <vector>
